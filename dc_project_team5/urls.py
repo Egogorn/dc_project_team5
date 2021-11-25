@@ -21,5 +21,18 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path("profile", views.profile, "profile"),
+    path('login', views.login_page, "login_page"),
+    path('register', views.register_page, "register_page"),
+    path('dashboard', views.dashboard, "dashboard"),
+    path('deadlines', views.deadlines, 'deadlines'),
+    path('tasks', views.tasks, 'tasks'),
+    path('solutions', views.solutions, 'solutions'),
+    path('solution', views.solution_page, 'solution_page'),
+    path('deadline', views.deadline_page, 'deadline_page'),
+    path('task', views.task_page, 'task_page'),
+    path('group', views.group_page, 'group_page'),
+    path('person', views.person_page, 'person_page'),
+    path('create_task', views.create_task, 'create_task'),
+    path('give_task', views.give_task, 'give_task'),
 ]
