@@ -1,0 +1,31 @@
+/* header */
+
+.navbar-nav {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.nav-item.col {
+    padding: 0;
+}
+
+.navbar-nav.sm {
+    display: none;
+}
+
+
+@media (max-width: 640px) {
+    .navbar-nav {
+        width: 95%;
+    }
+}
+
+@media (max-width: 520px) {
+    .navbar-nav {
+        display: block;
+    }
+
+    .nav-item.dropdown .dropdown-menu {
+        min-width: 0;
+    }
+}
