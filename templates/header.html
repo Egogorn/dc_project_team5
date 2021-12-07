@@ -1,1 +1,26 @@
-<nav class="navbar"></nav>
+<nav class="navbar navbar-expand navbar-light bg-light container-fluid">
+    <ul class="navbar-nav row" align="center">
+        <li class="nav-item col">
+            <a href="{% url 'dashboard' %}" class="nav-link">Главная</a>
+        </li>
+        <li class="nav-item dropdown col">
+            <a class="nav-link dropdown-toggle" href="#" id="groupDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Группы
+            </a>
+            <div class="dropdown-menu" aria-labelledby="groupDropdown">
+                <a class="dropdown-item" href="#">M3100</a>
+                <a class="dropdown-item" href="#">M3101</a>
+                <a class="dropdown-item" href="#">M3102</a>
+            </div>
+        </li>
+        <li class="nav-item col">
+            <a href="{% url 'tasks' %}" class="nav-link">Задания</a>
+        </li>
+        <li class="nav-item col">
+            <a href="{% url 'deadlines' %}" class="nav-link">Дедлайны</a>
+        </li>
+        <li class="nav-item col">
+            <a href="{% url 'solutions' %}" class="nav-link">Решения</a>
+        </li>
+    </ul>
+</nav>
