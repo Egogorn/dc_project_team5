@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Главная
+{% endblock %}
+
+{% block req %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'header.html' %}
+
+    <main class="body-content">
+        <div class="content-block deadlines">
+            <h3>Ближайшие дедлайны:</h3>
+            <div class="deadline-card">
+                <div class="content">
+                    <div class="header">
+                        <h5 class="title">Название задания</h5>
+                        <h5 class="deadline-date">Дедлайн: 01.01.2022</h5>
+                    </div>
+                    <span class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </span>
+                    <a href="{% url 'deadline_page' %}?id=1" class="more">Подробнее...</a>
+                </div>
+            </div>
+            <div class="deadline-card">
+                <div class="content">
+                    <div class="header">
+                        <h5 class="title">Название задания</h5>
+                        <h5 class="deadline-date">Дедлайн: 01.01.2022</h5>
+                    </div>
+                    <span class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </span>
+                    <a href="{% url 'deadline_page' %}?id=1" class="more">Подробнее...</a>
+                </div>
+            </div>
+            <div class="deadline-card">
+                <div class="content">
+                    <div class="header">
+                        <h5 class="title">Название задания</h5>
+                        <h5 class="deadline-date">Дедлайн: 01.01.2022</h5>
+                    </div>
+                    <span class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </span>
+                    <a href="{% url 'deadline_page' %}?id=1" class="more">Подробнее...</a>
+                </div>
+            </div>
+            <a href="{% url 'deadlines' %}" class="view-all">Посмотреть все</a>
+        </div>
+
+        <div class="content-block solutions" style="margin-bottom: 70px;">
+            <h3>Последние решения:</h3>
+            <div class="solution-card most-left">
+                <div class="content">
+                    <a href="{% url 'solution_page' %}?id=1"><h5 class="title">Название задания</h5></a>
+                    <h5 class="student">Иван Иванов, M3100</h5>
+                    <h5 class="date">23:59 01.01.2021</h5>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="content">
+                    <a href="{% url 'solution_page' %}?id=1"><h5 class="title">Название задания</h5></a>
+                    <h5 class="student">Иван Иванов, M3100</h5>
+                    <h5 class="date">23:59 01.01.2021</h5>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="content">
+                    <a href="{% url 'solution_page' %}?id=1"><h5 class="title">Название задания</h5></a>
+                    <h5 class="student">Иван Иванов, M3100</h5>
+                    <h5 class="date">23:59 01.01.2021</h5>
+                </div>
+            </div>
+            <a href="{% url 'solutions' %}" class="view-all">Посмотреть все</a>
+        </div>
+
+    </main>
+
+{% endblock %}
