@@ -1,0 +1,17 @@
+@startuml
+actor Student as S
+actor Teacher as T
+left to right direction
+package Task {
+    usecase "Set Title" as u1
+    usecase "Set Description" as u2
+    usecase "Set Points" as u3
+    usecase "Set Deadline" as u4
+    usecase "See Task" as u5
+}
+T->u1
+T->u2
+T->u3
+T->u4
+S->u5
+@enduml
