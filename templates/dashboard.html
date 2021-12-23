@@ -16,42 +16,27 @@
     <main class="body-content">
         <div class="content-block deadlines">
             <h3>Ближайшие дедлайны:</h3>
+            
+            {% for task in taskData %}
             <div class="deadline-card">
                 <div class="content">
                     <div class="header">
-                        <h5 class="title">Название задания</h5>
-                        <h5 class="deadline-date">Дедлайн: 01.01.2022</h5>
+                        <h5 class="title">{{task.name}}</h5>
+                        <h5 class="deadline-date">Дедлайн: {{task.deadline}}</h5>
                     </div>
                     <span class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        {{task.desc}}
                     </span>
-                    <a href="{% url 'deadline_page' %}?id=1" class="more">Подробнее...</a>
+                    <span class = "groups">
+                        Группы: 
+                        {% for name in task.group.all %}
+                        {{name}} 
+                        {% endfor %}
+                    </span>
+                    <a href="{% url 'deadline_page' %}?id={{task.id}}" class="more">Подробнее...</a>
                 </div>
             </div>
-            <div class="deadline-card">
-                <div class="content">
-                    <div class="header">
-                        <h5 class="title">Название задания</h5>
-                        <h5 class="deadline-date">Дедлайн: 01.01.2022</h5>
-                    </div>
-                    <span class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </span>
-                    <a href="{% url 'deadline_page' %}?id=1" class="more">Подробнее...</a>
-                </div>
-            </div>
-            <div class="deadline-card">
-                <div class="content">
-                    <div class="header">
-                        <h5 class="title">Название задания</h5>
-                        <h5 class="deadline-date">Дедлайн: 01.01.2022</h5>
-                    </div>
-                    <span class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </span>
-                    <a href="{% url 'deadline_page' %}?id=1" class="more">Подробнее...</a>
-                </div>
-            </div>
+            {% endfor %}
             <a href="{% url 'deadlines' %}" class="view-all">Посмотреть все</a>
         </div>
 

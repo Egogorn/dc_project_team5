@@ -8,9 +8,9 @@
                 Группы
             </a>
             <div class="dropdown-menu" aria-labelledby="groupDropdown">
-                <a class="dropdown-item" href="#">M3100</a>
-                <a class="dropdown-item" href="#">M3101</a>
-                <a class="dropdown-item" href="#">M3102</a>
+                {% for group in groups%}
+                <a class="dropdown-item" href="#">{{group.name}}</a>
+                {% endfor %}
             </div>
         </li>
         <li class="nav-item col">

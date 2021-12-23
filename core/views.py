@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Task, StudentGroup
 
 
 def profile(request):
@@ -15,7 +16,9 @@ def register_page(request):
 
 
 def dashboard(request):
-    return render(request, 'dashboard.html', {})
+    taskData = Task.objects.order_by('-deadline')[::-1]
+    groups = StudentGroup.objects.all()
+    return render(request, 'dashboard.html', {'taskData': taskData, 'groups': groups})
 
 
 def deadlines(request):

@@ -39,7 +39,15 @@
 
 .deadline-card .more {
     position: absolute;
+    float: left;
     bottom: 15px;
+}
+
+.deadline-card .groups {
+    position: absolute;
+    float: right;
+    bottom: 15px;
+    right: 15px;
 }
 
 a.view-all {

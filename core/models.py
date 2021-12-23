@@ -19,6 +19,13 @@ class Task(models.Model):
     def __str__(self):
         return self.name
 
+    def groups(self):
+        s = ""
+        for x in StudentGroup.objects:
+            if x in self.group:
+                s += str(x) + ' '
+        return s
+
 
 class Profile(models.Model):
     name = models.CharField(max_length=50, default="Ivan")
@@ -29,10 +36,11 @@ class Profile(models.Model):
     is_teacher = models.BooleanField(default=False)
 
     def __str__(self):
-        if not self.is_teacher:
-            return '%s %s %s' % (self.name, self.surname, self.group.all()[0])
+        if not self.is_teacher and self.group.all() != []:
+            return '%s %s %s %s' % (self.name, self.surname, self.father_name, self.group.all()[0])
         else:
             return '%s %s' % (self.name, self.surname)
+
 
 class Solution(models.Model):
     task = models.ForeignKey(Task, on_delete=models.PROTECT)
