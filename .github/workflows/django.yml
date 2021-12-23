@@ -28,7 +28,7 @@ jobs:
     - name: Create staticfiles
       run: |
         python manage.py collectstatic
-    -name: Update DB
+    - name: Update DB
       run: |
         python manage.py makemigrations core
         python manage.py migrate
