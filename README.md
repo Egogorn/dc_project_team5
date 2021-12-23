@@ -1,4 +1,8 @@
 # dc_project_team5
+
+Данный проект сейчас работает на базе heroku:
+https://dc-project-team5.herokuapp.com/dashboard
+
 ## Use cases
 ### Преподаватель может:
   1. Создавать задания и редактировать их потом
