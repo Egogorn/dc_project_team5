@@ -28,6 +28,10 @@ jobs:
     - name: Create staticfiles
       run: |
         python manage.py collectstatic
+    -name: Update DB
+      run: |
+        python manage.py makemigrations core
+        python manage.py migrate
     - name: Run Tests
       run: |
         python manage.py test core.tests.URLSTests
